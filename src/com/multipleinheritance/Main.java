@@ -1,24 +1,17 @@
 package com.multipleinheritance;
 
 interface One{
-	void display();
-interface Two {
-	void display();
-}
-class Three implements One,Two{
-
-	@Override
-	public void display() {
-		
-	System.out.println("Display");
-		
-		
+	default void show() {
+		System.out.println("One");
 	}
 }
-public class Main extends Three{
-
-	Main main= new Main();
-	
-	
+interface Two extends One{
 }
+interface Three extends One{
+}
+public class Main implements Two,Three{
+	public static void main(String[] args) {
+	Main main = new Main();
+	main.show();
+	}
 }
