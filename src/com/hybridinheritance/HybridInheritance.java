@@ -1,31 +1,35 @@
 package com.hybridinheritance;
-class ClassA{
-	public void print() {
-		System.out.println("ClassA");
+
+class firstClass{
+	void methodFirstClass(){
+
 	}
-	public interface InterfaceB{
-
-		void diplay();
-	}
-	public interface InterfaceC{
-
-		void diplay();
-	}
-
-
 }
-
-public class HybridInheritance extends ClassA implements InterfaceB,InterfaceC{
-
-	public void display() {
-		System.out.println("method implemendetion");
+interface One{
+	void methodInterface();
+}
+interface two{
+	void methodInterface();
+}
+class three extends firstClass implements One,two{
+	@Override
+	void methodFirstClass() {
+		System.out.println("Class Three");
 	}
-
-
-
-
-
-
-
-
+	@Override
+	public void methodInterface() {
+		System.out.println("INTERFACE");
+	}
+}
+public class HybridInheritance extends three{
+public static void main(String[] args) {
+	HybridInheritance hybridInheritance= new HybridInheritance();
+	hybridInheritance.methodFirstClass();
+	hybridInheritance.methodInterface();
+	
+	
+	
+	
+	
+}	
 }
