@@ -1,17 +1,16 @@
 package com.hybridinheritance;
 
-class firstClass{
+class FirstClass{
 	void methodFirstClass(){
-
 	}
 }
 interface One{
 	void methodInterface();
 }
-interface two{
+interface Two{
 	void methodInterface();
 }
-class three extends firstClass implements One,two{
+class Three extends FirstClass implements One,Two{
 	@Override
 	void methodFirstClass() {
 		System.out.println("Class Three");
@@ -21,15 +20,10 @@ class three extends firstClass implements One,two{
 		System.out.println("INTERFACE");
 	}
 }
-public class HybridInheritance extends three{
+public class HybridInheritance extends Three{
 public static void main(String[] args) {
 	HybridInheritance hybridInheritance= new HybridInheritance();
 	hybridInheritance.methodFirstClass();
-	hybridInheritance.methodInterface();
-	
-	
-	
-	
-	
-}	
+	hybridInheritance.methodInterface();		
+}
 }
